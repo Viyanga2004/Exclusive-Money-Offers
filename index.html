@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Money Offers | Limited Time Deals</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .header-highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .header-decoration {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .decoration-1 {
+            top: -150px;
+            right: -100px;
+        }
+        
+        .decoration-2 {
+            bottom: -100px;
+            left: -100px;
+            width: 200px;
+            height: 200px;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+        
+        .intro-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease;
+        }
+        
+        .intro-section p {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Offers Grid */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .offer-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .offer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .offer-header {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            padding: 1.2rem;
+        }
+        
+        .offer-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .offer-amount {
+            font-size: 1.1rem;
+            font-weight: bold;
+            opacity: 0.9;
+        }
+        
+        .offer-body {
+            padding: 1.5rem;
+        }
+        
+        .offer-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+        
+        .offer-detail i {
+            margin-right: 10px;
+            color: #4CAF50;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .offer-value {
+            font-weight: bold;
+            color: #2E7D32;
+            font-size: 1.1rem;
+        }
+        
+        .claim-btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .claim-btn:hover {
+            background: #388E3C;
+        }
+        
+        /* Filter Section */
+        .filter-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .filter-title {
+            margin-bottom: 1rem;
+            color: #1e3c72;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background: #f0f4f8;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-text {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #1e3c72;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .offers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section {
+                padding: 2rem 1rem;
+            }
+            
+            .cta-title {
+                font-size: 1.5rem;
+            }
+            
+            .filter-options {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .offer-header {
+                padding: 1rem;
+            }
+            
+            .offer-body {
+                padding: 1rem;
+            }
+            
+            .cta-btn {
+                width: 100%;
+                padding: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  
+<!-- Geo Restriction Elements -->
+<div id="info-bar">
+  🔒 Currently Running Offers on this Website — You are not in USA or you are using VPN / Proxy.
+  You cannot click this website — But you can visit. This option is for Affiliate (CPA) Network Managers.
+</div>
+
+<!-- Initial Geo Popup -->
+<div id="geo-popup">
+  <div class="popup-content">
+    <h2>Access Limited</h2>
+    <p>This website is intended for USA visitors only.<br>
+    It looks like you're not in the USA or using a VPN/Proxy.</p>
+    
+    <button onclick="closePopup()">Understood</button>
+    <button onclick="closeJustPopup()">For Affiliate Managers</button>
+  </div>
+</div>
+
+<!-- Lock Message Popup -->
+<div id="lock-popup">
+  <div class="popup-content">
+    <h2 style="color: green;">Thank You!</h2>
+    <p>We appreciate your understanding.<br>
+    This website remains locked for non-USA users.</p>
+  </div>
+</div>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Pink Info Bar */
+  #info-bar {
+    display: none;
+    background-color: #f8c8dc;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  #geo-popup, #lock-popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+
+  .popup-content h2 {
+    margin-bottom: 10px;
+    color: #dc3545;
+  }
+
+  .popup-content p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .popup-content button {
+    margin: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .popup-content button:hover {
+    background-color: #0056b3;
+  }
+
+  .no-click {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+</style>
+
+<script>
+  // Show Thank You + Lock popup
+  function closePopup() {
+    document.getElementById("geo-popup").style.display = "none";
+    document.getElementById("info-bar").style.display = "block";
+
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+      link.classList.add("no-click");
+      link.title = "Link disabled outside USA";
+    });
+
+    document.getElementById("lock-popup").style.display = "flex";
+  }
+
+  // Only close popup for Affiliate Managers (no thank you popup)
+  function closeJustPopup() {
+    document.getElementById("geo-popup").style.display = "none";
+    document.getElementById("info-bar").style.display = "block";
+
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+      link.classList.add("no-click");
+      link.title = "Link disabled outside USA";
+    });
+  }
+
+  // Check IP location
+  fetch('https://ipapi.co/json/')
+    .then(res => res.json())
+    .then(data => {
+      if (data.country !== 'US') {
+        document.getElementById("geo-popup").style.display = "flex";
+      }
+    })
+    .catch(() => {
+      document.getElementById("geo-popup").style.display = "flex";
+    });
+</script>
+
+    <header>
+        <div class="header-decoration decoration-1"></div>
+        <div class="header-decoration decoration-2"></div>
+        <div class="header-content">
+            <h1>Exclusive <span class="header-highlight">Money Offers</span> Available Now</h1>
+            <p class="subtitle">Limited time deals from top brands - claim yours today!</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="intro-section">
+            <h2>Amazing Cash & Gift Card Offers</h2>
+            <p>We've partnered with leading brands to bring you these exclusive money-saving offers. Act fast - these deals won't last forever!</p>
+        </section>
+        
+        <section class="filter-section">
+            <h3 class="filter-title">Filter Offers:</h3>
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All Offers</button>
+                <button class="filter-btn" data-filter="cash">Cash App</button>
+                <button class="filter-btn" data-filter="paypal">PayPal</button>
+                <button class="filter-btn" data-filter="retail">Retail</button>
+                <button class="filter-btn" data-filter="giftcard">Gift Cards</button>
+                <button class="filter-btn" data-filter="highvalue">High Value ($500+)</button>
+            </div>
+        </section>
+        
+        <section class="offers-grid" id="offersGrid">
+            <!-- Offer 1 -->
+            <div class="offer-card" data-category="cash highvalue">
+                <div class="offer-header">
+                    <h3 class="offer-title">Cash App</h3>
+                    <p class="offer-amount">Limited Time Offer</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$650 Cash Bonus</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>Limited time only</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Easy qualification</span>
+                    </div>
+                    <p>Get $650 cash bonus when you sign up and complete the requirements.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/37K3CSKJ/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 2 -->
+            <div class="offer-card" data-category="retail giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Culver's</h3>
+                    <p class="offer-amount">Food & Dining</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Gift Card</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>While supplies last</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Simple process</span>
+                    </div>
+                    <p>Get a $100 Culver's gift card when you complete the offer.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/367CZF84/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 3 -->
+            <div class="offer-card" data-category="retail giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Stop & Shop</h3>
+                    <p class="offer-amount">Grocery</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Gift Card</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>Limited availability</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Fast approval</span>
+                    </div>
+                    <p>$100 Stop & Shop gift card for new customers.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/367BKJHH/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 4 -->
+            <div class="offer-card" data-category="retail giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Jordan Socks</h3>
+                    <p class="offer-amount">Apparel</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Value</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>New customers only</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Limited quantity</span>
+                    </div>
+                    <p>Get $100 worth of premium Jordan socks.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/36796MQW/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 5 -->
+            <div class="offer-card" data-category="giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Royal Cruise</h3>
+                    <p class="offer-amount">Travel</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Credit</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>First come first serve</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Travel discount</span>
+                    </div>
+                    <p>$100 credit toward your next Royal Cruise vacation.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/3677RR29/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 6 -->
+            <div class="offer-card" data-category="retail giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Sam's Club</h3>
+                    <p class="offer-amount">Wholesale</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">Membership Offer</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>Limited time</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Exclusive deal</span>
+                    </div>
+                    <p>Special Sam's Club membership offer available now.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/3676DW9N/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 7 -->
+            <div class="offer-card" data-category="retail giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Amazon Tech</h3>
+                    <p class="offer-amount">Electronics</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">Tech Credit</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>New accounts</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Amazon verified</span>
+                    </div>
+                    <p>Special Amazon tech credit for new customers.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/367521K3/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 8 -->
+            <div class="offer-card" data-category="retail giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Aldi</h3>
+                    <p class="offer-amount">Grocery</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Gift Card</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>Limited quantity</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Grocery savings</span>
+                    </div>
+                    <p>Get a $100 Aldi gift card when you complete this offer.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/3673M4SG/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 9 -->
+            <div class="offer-card" data-category="cash">
+                <div class="offer-header">
+                    <h3 class="offer-title">Venmo</h3>
+                    <p class="offer-amount">Digital Wallet</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Bonus</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>New users</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Easy transfer</span>
+                    </div>
+                    <p>Get $100 when you sign up for Venmo and complete the requirements.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35WNXSFT/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 10 -->
+            <div class="offer-card" data-category="retail giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Target</h3>
+                    <p class="offer-amount">Retail</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Gift Card</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>Limited time</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Everything store</span>
+                    </div>
+                    <p>$100 Target gift card for completing this offer.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35WMJXP8/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 11 -->
+            <div class="offer-card" data-category="retail giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Starbucks</h3>
+                    <p class="offer-amount">Coffee</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Gift Card</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>First 500 only</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Coffee lovers</span>
+                    </div>
+                    <p>$100 Starbucks gift card when you qualify.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35WL62ZM/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 12 -->
+            <div class="offer-card" data-category="retail highvalue">
+                <div class="offer-header">
+                    <h3 class="offer-title">SHEIN</h3>
+                    <p class="offer-amount">Fashion</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$750 Credit</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>New customers</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Fashion credit</span>
+                    </div>
+                    <p>$750 SHEIN shopping credit when you complete this offer.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35WJR682/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 13 -->
+            <div class="offer-card" data-category="retail highvalue">
+                <div class="offer-header">
+                    <h3 class="offer-title">SHEIN</h3>
+                    <p class="offer-amount">Fashion</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$500 Credit</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>Limited time</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Apparel credit</span>
+                    </div>
+                    <p>$500 SHEIN shopping credit for qualifying users.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35WHD9HF/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 14 -->
+            <div class="offer-card" data-category="retail giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">SHEIN</h3>
+                    <p class="offer-amount">Fashion</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Credit</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>New accounts</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Clothing credit</span>
+                    </div>
+                    <p>$100 SHEIN shopping credit for new customers.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35WG1DQS/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 15 -->
+            <div class="offer-card" data-category="retail giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Sephora</h3>
+                    <p class="offer-amount">Beauty</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Gift Card</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>Limited availability</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Beauty products</span>
+                    </div>
+                    <p>$100 Sephora gift card when you qualify.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35WDLJ27/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 16 -->
+            <div class="offer-card" data-category="retail giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Sam's Club</h3>
+                    <p class="offer-amount">Wholesale</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Gift Card</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>New members</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Bulk savings</span>
+                    </div>
+                    <p>$100 Sam's Club gift card for qualifying members.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35WC7M9L/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 17 -->
+            <div class="offer-card" data-category="giftcard">
+                <div class="offer-header">
+                    <h3 class="offer-title">Roblox</h3>
+                    <p class="offer-amount">Gaming</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$100 Credit</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>Limited time</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Game currency</span>
+                    </div>
+                    <p>$100 Roblox credit for new accounts.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35W9SQK1/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 18 -->
+            <div class="offer-card" data-category="paypal highvalue">
+                <div class="offer-header">
+                    <h3 class="offer-title">PayPal</h3>
+                    <p class="offer-amount">Digital Payments</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$750 Cash Bonus</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>First 100 only</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Direct deposit</span>
+                    </div>
+                    <p>Get $750 when you sign up for PayPal and complete the offer.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35W8FTSD/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 19 -->
+            <div class="offer-card" data-category="paypal highvalue">
+                <div class="offer-header">
+                    <h3 class="offer-title">PayPal</h3>
+                    <p class="offer-amount">Digital Wallet</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$1000 Bonus</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>Exclusive offer</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Limited availability</span>
+                    </div>
+                    <p>$1000 PayPal bonus for qualifying users.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35W7313R/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+            
+            <!-- Offer 20 -->
+            <div class="offer-card" data-category="cash highvalue">
+                <div class="offer-header">
+                    <h3 class="offer-title">Cash App</h3>
+                    <p class="offer-amount">Mobile Payments</p>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-detail">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="offer-value">$750 Cash Bonus</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>New users only</span>
+                    </div>
+                    <div class="offer-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Easy transfer</span>
+                    </div>
+                    <p>Get $750 when you sign up for Cash App and complete the requirements.</p>
+                    <a href="https://www.gn3atrk.com/31319TQC/35RTRGH8/" class="claim-btn">Claim This Offer</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <h2 class="cta-title">Don't Miss These Amazing Offers!</h2>
+            <p class="cta-text">With limited availability on these exclusive deals, act now to claim your favorite offers before they're gone.</p>
+            <a href="#offersGrid" class="cta-btn">View All Offers</a>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <h3>Exclusive Offers Hub</h3>
+            <div class="footer-links">
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+            <p class="copyright">© 2023 Exclusive Offers Hub. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const offerCards = document.querySelectorAll('.offer-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    // Filter offers
+                    offerCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Simple animation on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.offer-card');
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state for animation
+            const offerCards = document.querySelectorAll('.offer-card');
+            offerCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+        });
+    </script>
+</body>
+</html>
